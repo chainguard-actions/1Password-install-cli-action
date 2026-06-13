@@ -1,1 +1,15 @@
-# 1Password-install-cli-action
+# 1Password/install-cli-action
+
+Install 1Password CLI in your pipeline
+
+Hardened by [Chainguard](https://www.chainguard.dev) from the upstream action at [https://github.com/1Password/install-cli-action](https://github.com/1Password/install-cli-action).
+
+## Versions
+
+| Version | Tag | Upstream commit |
+|---------|-----|-----------------|
+| v4.0.0 | [`v4.0.0`](https://github.com/chainguard-actions/1Password-install-cli-action/tree/v4.0.0) | [`a5215d3`](https://github.com/1Password/install-cli-action/commit/a5215d3a7f75c1629216c465ea9ab3ab399c4b71) |
+
+## Privacy
+
+This Action contacts Chainguard's licensing server to verify authorization. Connection metadata (IP address, GitHub repository identifier, timestamp, and any metadata encoded in the auth token) is transmitted to Chainguard, Inc. even if authorization is denied in accordance with our [Privacy Notice](https://www.chainguard.dev/legal/privacy-notice)
