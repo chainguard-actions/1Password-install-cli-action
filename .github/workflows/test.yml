@@ -1,0 +1,61 @@
+on: push
+name: Test installation
+
+permissions:
+  contents: read
+
+jobs:
+  use-latest-version:
+    name: "Test getting latest CLI stable version"
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@a37ce9120846195fa4ece8f58b268e6043cb2f26 # v3
+      - name: Install 1Password CLI
+        uses: ./ # 1password/install-cli-action@<version>
+      - name: Check CLI version
+        run: ./test/assert-version.sh latest
+  use-latest-beta-version:
+    name: "Test getting latest CLI beta version"
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@a37ce9120846195fa4ece8f58b268e6043cb2f26 # v3
+      - name: Install 1Password CLI
+        uses: ./ # 1password/install-cli-action@<version>
+        with:
+          version: latest-beta
+      - name: Check CLI version
+        run: ./test/assert-version.sh latest-beta
+  use-specific-version:
+    name: "Test getting a specific CLI version"
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@a37ce9120846195fa4ece8f58b268e6043cb2f26 # v3
+      - name: Install 1Password CLI
+        uses: ./ # 1password/install-cli-action@<version>
+        with:
+          version: 2.18.0
+      - name: Check CLI version
+        run: ./test/assert-version.sh 2.18.0
+  use-specific-beta-version:
+    name: "Test getting a specific CLI beta version"
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@a37ce9120846195fa4ece8f58b268e6043cb2f26 # v3
+      - name: Install 1Password CLI
+        uses: ./ # 1password/install-cli-action@<version>
+        with:
+          version: 2.19.0-beta.01
+      - name: Check CLI version
+        run: ./test/assert-version.sh 2.19.0-beta.01

@@ -1,0 +1,33 @@
+name: Test install latest-beta 1Password CLI
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - id: action
+        uses: .
+        with:
+          version: latest-beta
+
+      - name: Assert op binary is available
+        run: |
+          echo "Checking that 'op' is on PATH..."
+          if ! command -v op >/dev/null 2>&1; then
+            echo "FAIL: 'op' binary not found on PATH"
+            exit 1
+          fi
+          echo "PASS: 'op' binary found at $(command -v op)"
+
+      - name: Assert op version output is non-empty
+        run: |
+          echo "Running 'op --version'..."
+          VERSION_OUTPUT=$(op --version)
+          echo "actual version: $VERSION_OUTPUT"
+          if [ -z "$VERSION_OUTPUT" ]; then
+            echo "FAIL: 'op --version' returned empty output"
+            exit 1
+          fi
+          echo "PASS: op beta version is $VERSION_OUTPUT"
