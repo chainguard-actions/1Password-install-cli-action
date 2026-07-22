@@ -1,0 +1,31 @@
+name: Test specific version - install pinned 1Password CLI version
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - id: action
+        uses: .
+        with:
+          version: "2.30.0"
+      - name: Assert op CLI is installed
+        run: |
+          echo "Checking if op CLI is installed..."
+          if ! command -v op &>/dev/null; then
+            echo "FAIL: 'op' command not found in PATH"
+            exit 1
+          fi
+          echo "PASS: 'op' command found at $(command -v op)"
+      - name: Assert op CLI version matches requested version
+        run: |
+          EXPECTED="2.30.0"
+          ACTUAL="$(op --version 2>&1 || true)"
+          echo "expected: $EXPECTED"
+          echo "actual: $ACTUAL"
+          if [ "$ACTUAL" != "$EXPECTED" ]; then
+            echo "FAIL: expected version '$EXPECTED' but got '$ACTUAL'"
+            exit 1
+          fi
+          echo "PASS: op CLI version matches expected: $ACTUAL"
