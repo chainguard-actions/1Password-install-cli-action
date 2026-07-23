@@ -12,6 +12,7 @@ Hardened by [Chainguard](https://www.chainguard.dev) from the upstream action at
 | v2.0.0 | [`v2.0.0`](https://github.com/chainguard-actions/1Password-install-cli-action/tree/v2.0.0) | [`707af61`](https://github.com/1Password/install-cli-action/commit/707af61a6c8b4fa7f9476328c035208fba6b54d7) |
 | v3.0.0 | [`v3.0.0`](https://github.com/chainguard-actions/1Password-install-cli-action/tree/v3.0.0) | [`8d006a0`](https://github.com/1Password/install-cli-action/commit/8d006a0d0a4fd505af7f7ce589e7f768385ff5e4) |
 | v4.0.0 | [`v4.0.0`](https://github.com/chainguard-actions/1Password-install-cli-action/tree/v4.0.0) | [`a5215d3`](https://github.com/1Password/install-cli-action/commit/a5215d3a7f75c1629216c465ea9ab3ab399c4b71) |
+| v4.1.0 | [`v4.1.0`](https://github.com/chainguard-actions/1Password-install-cli-action/tree/v4.1.0) | [`1a3160d`](https://github.com/1Password/install-cli-action/commit/1a3160d5e9de1ae0803eaa08a88746f5ae3daa50) |
 
 ## Privacy
 
