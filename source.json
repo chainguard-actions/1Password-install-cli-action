@@ -4,8 +4,13 @@
   "version": "v4.0.0",
   "commit_sha": "a5215d3a7f75c1629216c465ea9ab3ab399c4b71",
   "url": "https://github.com/1Password/install-cli-action",
-  "policy_sha": "d636be7e43ef829af6e853da6b3c7566db9f72fe",
+  "policy_sha": "374911c4be584df24e6da57af2d990570ef0f859",
   "test_policy_sha": "843adf9e4b8f85d0c08b27b9d0b09dd094b54702",
   "test_agent_version": "2",
-  "harden_agent_version": "2"
+  "harden_agent_version": "2",
+  "dist_artifact": {
+    "gcs_uri": "gs://patch-actions-node-artifacts/dist-artifacts/1Password/install-cli-action/v4.0.0/sha256-551dc192784a647cc974df0bddf62d53641d3ccbe66c24c3f3c36fbae39a9e1a.tar.gz",
+    "sha256": "551dc192784a647cc974df0bddf62d53641d3ccbe66c24c3f3c36fbae39a9e1a",
+    "size_bytes": 292278
+  }
 }
